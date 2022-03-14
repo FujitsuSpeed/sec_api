@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function update() {
+				$.get('https://explorer.securuscoin.com/api/getmarketinfo/')
+				.done(function(data)
+				{	
+					$("#output").text(JSON.stringify(data));
+				})
+				.fail(function(data)
+				{	
+					$("#output").text(JSON.stringify(data));
+				});
+			}
+		</script>
+	</head>
+	<body onload="update()">
+		<div id="output"></div> 
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	</body>
+</html>
